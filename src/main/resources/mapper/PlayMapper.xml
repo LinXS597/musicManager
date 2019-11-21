@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.zucc.musicmanager.mapper.PlayMapper">
+<!--    <select id="getUser" resultType="com.test.dto.User">-->
+<!--        select * from user-->
+<!--    </select>-->
+<!--    <delete id="deleteUser" parameterType="Integer">-->
+<!--        delete from user where id =#{id}-->
+<!--    </delete>-->
+<!--    <insert id="addUser" parameterType="com.test.dto.User">-->
+<!--        insert into user(id,name,age,sex)values(#{id},#{name},#{age},#{sex})-->
+<!--    </insert>-->
+    <select id="find" resultType="cn.edu.zucc.musicmanager.model.PlayInfo">
+        select * from tbl_playinfo where id =#{id}
+    </select>
+</mapper>
