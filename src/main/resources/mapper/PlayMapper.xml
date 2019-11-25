@@ -13,4 +13,7 @@
     <select id="find" resultType="cn.edu.zucc.musicmanager.model.PlayInfo">
         select * from tbl_playinfo where id =#{id}
     </select>
+    <select id="getAllPlaydescription" parameterType="Integer" resultType="java.lang.String">
+        select description from tbl_playinfo limit 100 offset #{offset}
+    </select>
 </mapper>

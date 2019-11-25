@@ -2,6 +2,8 @@ package cn.edu.zucc.musicmanager.service;
 
 import javax.annotation.Resource;
 
+import cn.edu.zucc.musicmanager.mapper.SongMapper;
+import cn.edu.zucc.musicmanager.mapper.UserMapper;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -13,12 +15,12 @@ import java.util.ArrayList;
 
 
 @ComponentScan({"cn.edu.zucc.musicmanager.mapper"})
-@Service("PlayService")
-public class PlayService{
+@Service("UserService")
+public class UserService{
 
 
     @Resource
-    private PlayMapper playMapper;
+    private UserMapper userMapper;
 
 
 //    public void insert(PlayInfo playInfo) {
@@ -37,11 +39,8 @@ public class PlayService{
 //        playMapper.delete(id);
 //    }
 
-    public PlayInfo find(String id){
-        return playMapper.find(id);
+    public ArrayList<String> getAllSignature(int offset){
+        return userMapper.getAllSignature(offset);
     }
 
-    public ArrayList<String> getAllPlaydescription(int offset){
-        return playMapper.getAllPlaydescription(offset);
-    }
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 
 @Mapper
-public interface PlayMapper {
+public interface SongMapper {
 
 //    public void insert(PlayInfo playInfo);
 //
@@ -17,7 +17,5 @@ public interface PlayMapper {
 //
 //    public PlayInfo find(int id);
 
-    public PlayInfo find(String id);
-
-    public ArrayList<String> getAllPlaydescription(int offset);
+    public ArrayList<String> getAllLyric(int offset);
 }
