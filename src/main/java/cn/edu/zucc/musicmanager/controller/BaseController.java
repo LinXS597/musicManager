@@ -20,7 +20,7 @@ public class BaseController {
 
     @RequestMapping("getDatanum")
     @ResponseBody
-    public JsonResult<List> getPlay(){
+    public JsonResult<List> getDatanum(){
         return new JsonResult<>(baseService.getDatanum());
     }
 

@@ -1,5 +1,6 @@
 package cn.edu.zucc.musicmanager.mapper;
 
+import cn.edu.zucc.musicmanager.result.Chartpara;
 import org.apache.ibatis.annotations.Mapper;
 import cn.edu.zucc.musicmanager.model.PlayInfo;
 
@@ -20,4 +21,14 @@ public interface PlayMapper {
     public PlayInfo find(String id);
 
     public ArrayList<String> getAllPlaydescription(int offset);
+
+    public ArrayList<Long> getAllPlaysendtime();
+
+    public ArrayList<PlayInfo> getTenhotPlay();
+
+    public int getPlaycount(Chartpara chartpara);
+
+    public int getSharecount(Chartpara chartpara);
+
+    public int getCommentcount(Chartpara chartpara);
 }

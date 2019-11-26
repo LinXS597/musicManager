@@ -16,4 +16,19 @@
     <select id="getAllPlaydescription" parameterType="Integer" resultType="java.lang.String">
         select description from tbl_playinfo limit 100 offset #{offset}
     </select>
+    <select id="getAllPlaysendtime" resultType="Long">
+        select createTime from tbl_playinfo
+    </select>
+    <select id="getTenhotPlay" resultType="cn.edu.zucc.musicmanager.model.PlayInfo">
+        select * from tbl_playinfo order by playCount DESC limit 10
+    </select>
+    <select id="getPlaycount" parameterType="cn.edu.zucc.musicmanager.result.Chartpara" resultType="Integer">
+        SELECT count(*) FROM tbl_playinfo where playCount &lt; #{end} and playCount &gt;= #{start}
+    </select>
+    <select id="getSharecount" parameterType="cn.edu.zucc.musicmanager.result.Chartpara" resultType="Integer">
+        SELECT count(*) FROM tbl_playinfo where shareCount &lt; #{end} and shareCount &gt;= #{start}
+    </select>
+    <select id="getCommentcount" parameterType="cn.edu.zucc.musicmanager.result.Chartpara" resultType="Integer">
+        SELECT count(*) FROM tbl_playinfo where commentCount &lt; #{end} and commentCount &gt;= #{start}
+    </select>
 </mapper>

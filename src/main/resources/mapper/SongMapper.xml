@@ -13,4 +13,10 @@
     <select id="getAllLyric" parameterType="Integer" resultType="java.lang.String">
         select songlyric from tbl_songinfo limit 100 offset #{offset}
     </select>
+    <select id="getCommentsendtime" resultType="Long">
+        select sendtime from tbl_songcomment limit 100000
+    </select>
+    <select id="getHotComment" parameterType="Integer" resultType="cn.edu.zucc.musicmanager.model.SongComment">
+        select * from tbl_songcomment GROUP BY commentid ORDER BY likecount DESC limit #{limit}
+    </select>
 </mapper>

@@ -11,12 +11,12 @@
     <!--        insert into user(id,name,age,sex)values(#{id},#{name},#{age},#{sex})-->
     <!--    </insert>-->
     <select id="getLyricWC" resultType="cn.edu.zucc.musicmanager.model.WordCountInfo">
-        select * from tbl_lyricwordcount order by value DESC limit 500
+        select * from tbl_lyricwordcount where name not in (SELECT name from tbl_stopword) order by value DESC limit 200
     </select>
     <select id="getSignatureWC" resultType="cn.edu.zucc.musicmanager.model.WordCountInfo">
-        select * from tbl_signaturewordCloud order by value DESC limit 500
+        select * from tbl_signaturewordCloud where name not in (SELECT name from tbl_stopword) order by value DESC limit 200
     </select>
     <select id="getPlaydescriptionWC" resultType="cn.edu.zucc.musicmanager.model.WordCountInfo">
-        select * from tbl_playdescription order by value DESC limit 500
+        select * from tbl_playdescription where name not in (SELECT name from tbl_stopword) order by value DESC limit 200
     </select>
 </mapper>

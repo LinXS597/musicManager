@@ -1,5 +1,7 @@
 package cn.edu.zucc.musicmanager.mapper;
 
+import cn.edu.zucc.musicmanager.model.SongComment;
+import cn.edu.zucc.musicmanager.result.Chartdata;
 import org.apache.ibatis.annotations.Mapper;
 import cn.edu.zucc.musicmanager.model.PlayInfo;
 
@@ -18,4 +20,10 @@ public interface SongMapper {
 //    public PlayInfo find(int id);
 
     public ArrayList<String> getAllLyric(int offset);
+
+    public ArrayList<Long> getCommentsendtime();
+
+    public ArrayList<SongComment> getHotComment(int limit);
+
+
 }
