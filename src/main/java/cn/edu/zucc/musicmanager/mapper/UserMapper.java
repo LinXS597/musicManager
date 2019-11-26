@@ -1,7 +1,8 @@
 package cn.edu.zucc.musicmanager.mapper;
 
+import cn.edu.zucc.musicmanager.result.Chartpara;
+import cn.edu.zucc.musicmanager.result.Chartres;
 import org.apache.ibatis.annotations.Mapper;
-import cn.edu.zucc.musicmanager.model.PlayInfo;
 
 import java.util.ArrayList;
 
@@ -18,4 +19,18 @@ public interface UserMapper {
 //    public PlayInfo find(int id);
 
     public ArrayList<String> getAllSignature(int offset);
+
+    public ArrayList<Chartres> getuserGender();
+
+    public ArrayList<Chartres> getuserArea();
+
+    public ArrayList<Long> getuserAge();
+
+    public int getuserFollows(Chartpara chartpara);
+
+    public int getuserFollowed(Chartpara chartpara);
+
+    public int getuserPlaylist(Chartpara chartpara);
+
+    public int getuserEventcount(Chartpara chartpara);
 }

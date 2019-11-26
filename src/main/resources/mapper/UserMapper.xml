@@ -13,4 +13,25 @@
     <select id="getAllSignature" parameterType="Integer" resultType="java.lang.String">
         select signature from tbl_user limit 1000 offset #{offset}
     </select>
+    <select id="getuserGender" resultType="cn.edu.zucc.musicmanager.result.Chartres">
+        SELECT gender as sex,count(*) as count FROM tbl_user group by gender
+    </select>
+    <select id="getuserArea" resultType="cn.edu.zucc.musicmanager.result.Chartdata">
+        SELECT provience.proviencename as name,count(*) as value FROM tbl_user,provience where tbl_user.provience=provience.proviencecode GROUP BY tbl_user.provience
+    </select>
+    <select id="getuserAge" resultType="Long">
+        SELECT birthday from tbl_user
+    </select>
+    <select id="getuserFollows" parameterType="cn.edu.zucc.musicmanager.result.Chartpara" resultType="Integer">
+        SELECT count(*) FROM tbl_user where follows &lt; #{end} and follows &gt;= #{start}
+    </select>
+    <select id="getuserFollowed" parameterType="cn.edu.zucc.musicmanager.result.Chartpara" resultType="Integer">
+        SELECT count(*) FROM tbl_user where followed &lt; #{end} and followed &gt;= #{start}
+    </select>
+    <select id="getuserPlaylist" parameterType="cn.edu.zucc.musicmanager.result.Chartpara" resultType="Integer">
+        SELECT count(*) FROM tbl_user where playlistCount &lt; #{end} and playlistCount &gt;= #{start}
+    </select>
+    <select id="getuserEventcount" parameterType="cn.edu.zucc.musicmanager.result.Chartpara" resultType="Integer">
+        SELECT count(*) FROM tbl_user where eventCount &lt; #{end} and eventCount &gt;= #{start}
+    </select>
 </mapper>
