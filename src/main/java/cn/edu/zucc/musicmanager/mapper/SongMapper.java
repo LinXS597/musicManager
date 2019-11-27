@@ -25,5 +25,7 @@ public interface SongMapper {
 
     public ArrayList<SongComment> getHotComment(int limit);
 
+    public void updateCommentflag(SongComment songComment);
 
+    public int getCommentjudge(int flag);
 }

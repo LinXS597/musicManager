@@ -9,6 +9,7 @@ public class SongComment {
     private String content;
     private Long sendtime;
     private Long likecount;
+    private int flag;
 
     public int getCkeyid() {
         return ckeyid;
@@ -66,16 +67,25 @@ public class SongComment {
         this.likecount = likecount;
     }
 
+    public int getFlag() {
+        return flag;
+    }
+
+    public void setFlag(int flag) {
+        this.flag = flag;
+    }
+
     @Override
     public String toString() {
         return "SongComment{" +
-                "ckeyid='" + ckeyid + '\'' +
+                "ckeyid=" + ckeyid +
                 ", commentId='" + commentId + '\'' +
-                ", singid='" + songid + '\'' +
+                ", songid='" + songid + '\'' +
                 ", userid='" + userid + '\'' +
-                ", context='" + content + '\'' +
+                ", content='" + content + '\'' +
                 ", sendtime=" + sendtime +
                 ", likecount=" + likecount +
+                ", flag=" + flag +
                 '}';
     }
 }

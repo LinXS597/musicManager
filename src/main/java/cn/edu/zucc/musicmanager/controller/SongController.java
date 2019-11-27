@@ -36,4 +36,10 @@ public class SongController {
         return new JsonResult<>(songService.getHotComment(limit));
     }
 
+    @RequestMapping("getCommentjudge")
+    @ResponseBody
+    public JsonResult<List> getCommentjudge(){
+        return new JsonResult<>(songService.getCommentjudge());
+    }
+
 }
